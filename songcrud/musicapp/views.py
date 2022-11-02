@@ -1,5 +1,16 @@
-#from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Artiste, Song, Lyric
+from .serializers import ArtisteSerializer, SongSerializer, LyricSerializer
 # Create your views here.
-def index(request):
-    return HttpResponse('<h1>This is my Music app homepage')
+class ArtisteView(viewsets.ModelViewSet):
+    queryset = Artiste.objects.all()
+    serializer_class = ArtisteSerializer
+
+class SongView(viewsets.ModelViewSet):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer
+
+class LyricView(viewsets.ModelViewSet):
+    queryset = Lyric.objects.all()
+    serializer_class = LyricSerializer

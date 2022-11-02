@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #Localapp
-    'musicapp.apps.MusicappConfig'
+    'rest_framework',
+    'musicapp.apps.MusicappConfig',
 ]
 
 MIDDLEWARE = [
